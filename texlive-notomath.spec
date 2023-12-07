@@ -1,6 +1,6 @@
 Name:		texlive-notomath
-Version:	58726
-Release:	2
+Version:	68014
+Release:	1
 Summary:	Math support for Noto fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/notomath
