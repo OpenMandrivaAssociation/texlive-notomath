@@ -1,5 +1,5 @@
 Name:		texlive-notomath
-Version:	68014
+Version:	71429
 Release:	1
 Summary:	Math support for Noto fonts
 Group:		Publishing
