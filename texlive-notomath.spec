@@ -3,7 +3,7 @@ Version:	71429
 Release:	1
 Summary:	Math support for Noto fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/notomath
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/notomath
 License:	ofl lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/notomath.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/notomath.doc.r%{version}.tar.xz
