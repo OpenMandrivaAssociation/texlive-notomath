@@ -1,40 +1,21 @@
-Name:		texlive-notomath
-Version:	71429
-Release:	1
+%global tl_name notomath
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.031
+Release:	%{tl_revision}.1
 Summary:	Math support for Noto fonts
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/notomath
+URL:		https://www.ctan.org/tex-archive/fonts/notomath
 License:	ofl lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/notomath.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/notomath.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/notomath.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/notomath.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Math support via newtxmath for Google's NotoSerif and NotoSans.
-(Regular and Bold weights only.)
+Math support via newtxmath for Google's NotoSerif and NotoSans. (Regular
+and Bold weights only.)
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/notomath
-%{_texmfdistdir}/fonts/vf/public/notomath
-%{_texmfdistdir}/fonts/type1/public/notomath
-%{_texmfdistdir}/fonts/tfm/public/notomath
-%{_texmfdistdir}/fonts/map/dvips/notomath
-%doc %{_texmfdistdir}/doc/fonts/notomath
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
